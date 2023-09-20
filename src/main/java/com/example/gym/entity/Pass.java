@@ -15,6 +15,11 @@ import java.time.LocalDateTime;
 @Entity
 public class Pass {  // 출입장부
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "pass_no")
+    private Long passNo;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "memberId")
     private Member member;  // 폴딩키 (회원 아이디 )
