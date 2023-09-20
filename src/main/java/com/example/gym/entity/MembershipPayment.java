@@ -1,8 +1,17 @@
 package com.example.gym.entity;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
-
+@Getter
+@Setter
+@Table(name="membership_payment")
+@Builder
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
 public class MembershipPayment {
 
     @Id

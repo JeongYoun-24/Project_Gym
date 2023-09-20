@@ -1,4 +1,4 @@
-package com.example.gym.gym;
+package com.example.gym;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
