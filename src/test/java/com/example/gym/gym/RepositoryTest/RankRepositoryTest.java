@@ -32,7 +32,7 @@ public class RankRepositoryTest {
                 .build();
 
         log.info("직급 데이터 "+rank);
-      rank  =  rankRepository.save(rank);
+        rank  =  rankRepository.save(rank);
         log.info("db에 저장된 데이터"+rank);
 
     }
