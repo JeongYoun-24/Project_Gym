@@ -12,10 +12,10 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Program {  // 프로그램 종료
+public class Program {  // 프로그램
     
     @Id
-    @Column(name = "")
+    @Column(name = "program_id")
     private String programId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employee_id")

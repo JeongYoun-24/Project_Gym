@@ -18,7 +18,7 @@ public class Pass {  // 출입장부
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "pass_no")
-    private Long passNo;
+    private Long passNo;                  // 출입부 번호
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "memberId")
