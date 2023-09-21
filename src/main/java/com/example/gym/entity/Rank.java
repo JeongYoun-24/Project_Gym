@@ -20,7 +20,7 @@ public class Rank {  // 직급
     private Long rankNo;  // 직급 번호
 
     private int salary;   // 월급
-    private int LectureFee; // 강의비용
+    private int lectureFee; // 강의비용
 
 
 }
