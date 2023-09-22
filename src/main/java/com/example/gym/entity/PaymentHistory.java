@@ -17,7 +17,7 @@ public class PaymentHistory {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="program_No")
+    @Column(name="history_id")
     private Long historyId;                        // 내역 아이디
 
     @ManyToOne(fetch = FetchType.LAZY)

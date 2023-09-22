@@ -21,7 +21,7 @@ public class Pass {  // 출입장부
     private Long passNo;                  // 출입부 번호
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "memberId")
+    @JoinColumn(name = "member_id")
     private Member member;  // 폴딩키 (회원 아이디 )
 
     @Column(name="in_date")

@@ -5,6 +5,7 @@ import lombok.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -29,6 +30,8 @@ public class Member {    // 회원 정보
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    private LocalDateTime regDate;  // 회원가입 날짜
 
 
   /*  public static Member createMember(MemberDTO memberDTO, PasswordEncoder passwordEncoder){
