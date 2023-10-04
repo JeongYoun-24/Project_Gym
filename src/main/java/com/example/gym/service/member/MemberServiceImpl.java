@@ -9,7 +9,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.Optional;
 
@@ -17,7 +16,7 @@ import java.util.Optional;
 @Log4j2
 @Transactional
 @RequiredArgsConstructor
-public class MemberServiceImpl implements MemberService{
+public class MemberServiceImpl implements MemberService {
 
 
     private final ModelMapper modelMapper;
@@ -26,10 +25,10 @@ public class MemberServiceImpl implements MemberService{
     private final PasswordEncoder passwordEncoder;
 
 
-    public Member saveMember(Member member){
+    public Member saveUsers(Member users){
         // 서버에서 validate적용
-        validateDuplicateMember(member);
-        return memberRepository.save(member);
+        validateDuplicateMember(users);
+        return memberRepository.save(users);
     }
 
     private void validateDuplicateMember(Member users){
@@ -43,20 +42,26 @@ public class MemberServiceImpl implements MemberService{
 
     }
 
+
+
+
+
+
+
     @Override
     public String register(MemberDTO memberDTO) {
         // dto-> entity로 데이터 복사
-        Member member = modelMapper.map(memberDTO,Member.class);
-        String membmerId = memberRepository.save(member).getMemberId();
+        Member users = modelMapper.map(memberDTO,Member.class);
+        String user_id = memberRepository.save(users).getMemberId();
 
-        return membmerId;
+        return user_id;
     }
 
     @Override
-    public MemberDTO readOne(String membmerId) {
-        Member member = memberRepository.findById(membmerId).orElseThrow(EntityNotFoundException::new);
-
-        MemberDTO usersDTO = modelMapper.map(member,MemberDTO.class);
+    public MemberDTO readOne(String user_id) {
+        Optional<Member> result = memberRepository.findById(user_id);
+        Member users = result.orElseThrow();
+        MemberDTO usersDTO = modelMapper.map(users,MemberDTO.class);
 
         return usersDTO;
     }
@@ -64,11 +69,11 @@ public class MemberServiceImpl implements MemberService{
     @Override
     public void modify(MemberDTO memberDTO) {
 
-        Member member = memberRepository.findById(memberDTO.getMemberId()).orElseThrow(EntityNotFoundException::new);
+        Optional<Member> result =  memberRepository.findById(memberDTO.getMemberId());
+        Member board = result.orElseThrow();
 
-
-        member.change(memberDTO.getPassword(),memberDTO.getName(),memberDTO.getEmail());
-        memberRepository.save(member);
+        board.change(memberDTO.getPassword(),memberDTO.getName(),memberDTO.getEmail());
+        memberRepository.save(board);
 
     }
 
@@ -77,50 +82,95 @@ public class MemberServiceImpl implements MemberService{
 
 
     @Override
-    public void remove(String membmerId) {
-        memberRepository.deleteById(membmerId);
+    public void remove(String user_id) {
+        memberRepository.deleteById(user_id);
     }
 
     @Override
     public MemberDTO login(String name, String email) {
-        Member member = memberRepository.findByNameOrEmail(name,email);
+        Member users = memberRepository.findByNameOrEmail(name,email);
 
-        MemberDTO memberDTO = modelMapper.map(member,MemberDTO.class);
+        MemberDTO usersDTO = modelMapper.map(users,MemberDTO.class);
 
-        return memberDTO;
+        return usersDTO;
     }
 
     @Override
     public MemberDTO loginId(String email) {
 
-        Member member = memberRepository.findByEmail(email);
+        Member users = memberRepository.findByEmail(email);
 
-        MemberDTO memberDTO = modelMapper.map(member,MemberDTO.class);
+        MemberDTO usersDTO = modelMapper.map(users,MemberDTO.class);
 
-        return memberDTO;
+        return usersDTO;
     }
 
     @Override
     public MemberDTO loginPwd(String memberId, String email) {
-        Member member= memberRepository.findByMemberIdOrEmail(memberId,email);
+        Member users = memberRepository.findByMemberIdOrEmail(memberId,email);
 
-        MemberDTO memberDTO = modelMapper.map(memberId,MemberDTO.class);
+        MemberDTO usersDTO = modelMapper.map(users,MemberDTO.class);
 
-        return memberDTO;
+        return usersDTO;
     }
 
     @Override
     public void pwdUpdate(MemberDTO memberDTO) {
 
-        Member member =  memberRepository.findById(memberDTO.getMemberId()).orElseThrow(EntityNotFoundException::new);
+        Optional<Member> result =  memberRepository.findById(memberDTO.getMemberId());
+        Member users = result.orElseThrow();
 
-
-        member.pwdUpdate(memberDTO.getPassword(),passwordEncoder);
-        memberRepository.save(member);
+        users.pwdUpdate(memberDTO.getPassword(),passwordEncoder);
+        memberRepository.save(users);
 
 
     }
 
+//    @Override
+//    public UsersDTO findByLoginId(String user_id, String user_pwd) {
+//        return null;
+//    }
+//
+//    @Override
+//    public List<Users> allList() {
+//        List<Users> itemList = usersRepository.findAll();
+//
+//
+//        return itemList;
+//    }
+
+//    @Override
+//    public UsersDTO loginId(String user_email) { // 이메일로 비밀번호 찾기
+//        Users users = usersRepository.findByuser_email(user_email);
+//        ;
+//        UsersDTO usersDTO = modelMapper.map(users,UsersDTO.class);
+//
+//        return usersDTO;
+//    }
+
+//    @Override
+//    public UsersDTO loginPwd(String user_id, String user_email) { //아이디와 이메일로 비밀번호 찾기
+//        Optional<Users> result = usersRepository.findById(user_id);
+//        Users users = result.orElseThrow();
+//        UsersDTO usersDTO = modelMapper.map(users,UsersDTO.class);
+//
+//        return null;
+//    }
+
+//    @Override
+//    public UsersDTO selectOne(String account) {
+//        return mapper.selectOne(account);
+//    }
+//
+//    @Override
+//    public void keepLogin(String session, Date limitTime, String account) {
+//        Map<String, Object> datas = new HashMap<>();
+//        datas.put("sessionId", session);
+//        datas.put("limitTime", limitTime);
+//        datas.put("account", account);
+//
+//        mapper.keepLogin(datas);
+//    }
 
 
 }
