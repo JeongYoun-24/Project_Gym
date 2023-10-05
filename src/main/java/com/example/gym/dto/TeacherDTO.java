@@ -1,9 +1,15 @@
 package com.example.gym.dto;
 
 import com.example.gym.entity.Rank;
+import lombok.*;
 
 import javax.persistence.*;
-
+@Getter
+@Setter
+@Builder
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class TeacherDTO {
 
 

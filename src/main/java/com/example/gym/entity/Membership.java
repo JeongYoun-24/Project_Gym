@@ -23,6 +23,9 @@ public class Membership {  // 회원권
     private int price;          // 금액
 
 
-
+    public void change(int months, int price){
+        this.months = months;
+        this.price = price;
+    }
 
 }

@@ -1,13 +1,19 @@
 package com.example.gym.dto;
 
 import com.example.gym.entity.Member;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
-
+@Getter
+@Setter
+@Builder
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class PassDTO {
 
 

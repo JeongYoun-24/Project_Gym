@@ -1,7 +1,14 @@
 package com.example.gym.dto;
 
-import javax.persistence.Column;
+import lombok.*;
 
+import javax.persistence.Column;
+@Getter
+@Setter
+@Builder
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 public class RankDTO {
 
 
