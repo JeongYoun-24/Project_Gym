@@ -20,7 +20,7 @@ public class ControllerTest {
     @GetMapping(value = "test2")
     public String test2(){
 
-        return "fragments/footer";
+        return "fragments/header";
     }
     @GetMapping(value = "test3")
     public String test3(){

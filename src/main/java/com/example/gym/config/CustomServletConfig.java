@@ -16,6 +16,8 @@ public class CustomServletConfig  implements WebMvcConfigurer {
 
     @Value("${itemuploadPath}")
     String uploadPath3;
+    @Value("${gymuploadPath}")
+    String uploadPath4;
 
 
 
@@ -38,6 +40,8 @@ public class CustomServletConfig  implements WebMvcConfigurer {
                 .addResourceLocations(uploadPath2);
         registry.addResourceHandler("/images3/**/")
                 .addResourceLocations(uploadPath3);
+        registry.addResourceHandler("/imgs/**/")
+                .addResourceLocations(uploadPath4);
 
     }
 }
