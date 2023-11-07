@@ -31,8 +31,8 @@
 
 <H3>메인 페이지</H3>
 <BR>
-<img src="![제목 없는 디자인 (1)](https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/7a7eb9b2-10f8-4173-a456-9f5083a01c96)">
-![제목 없는 디자인 (1)](https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/7a7eb9b2-10f8-4173-a456-9f5083a01c96)
+<img src="![제목 없는 디자인 (1)]https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/7a7eb9b2-10f8-4173-a456-9f5083a01c96">
+
 
 <UL>
  <LI>등록된 계좌의 예금을 확인 할 수 있고 가입된 적금의 상태를 확인 할 수 있습니다.</LI>
