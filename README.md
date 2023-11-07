@@ -31,7 +31,7 @@
 
 <H3>메인 페이지</H3>
 <BR>
-<img src="![제목 없는 디자인 (1)]https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/7a7eb9b2-10f8-4173-a456-9f5083a01c96">
+<img src="https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/7a7eb9b2-10f8-4173-a456-9f5083a01c96">
 
 
 <UL>
