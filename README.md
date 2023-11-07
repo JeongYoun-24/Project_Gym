@@ -1,5 +1,3 @@
-
-https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/9f7880af-5794-43cd-bf95-cc8ce8772230
 # PortfolioBank
 헬스장 웹페이지 
 
@@ -26,17 +24,12 @@ https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/9f7880af-
 
 # E-R 다이어그램
 
-![은행 프로젝트 erd](https://github.com/oals/PortfolioBank/assets/136543676/287f1ddb-4e14-4fa2-8248-1af365fb7412)
+
 
 # 핵심 기능 및 페이지 소개
 
 <H3>메인 페이지</H3>
 <BR>
-
-
-
-https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/db4e7906-d435-40e7-b21b-8feb2cd7cdf8
-
 
 
 
