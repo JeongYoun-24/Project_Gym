@@ -1,3 +1,5 @@
+
+https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/9f7880af-5794-43cd-bf95-cc8ce8772230
 # PortfolioBank
 헬스장 웹페이지 
 
@@ -31,7 +33,12 @@
 <H3>메인 페이지</H3>
 <BR>
 
-![개인 프로젝트 bank 메인 페이지](https://github.com/oals/PortfolioBank/assets/136543676/c8a1a3a4-6a7b-4514-b1cb-6861596c772a)
+
+
+https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/db4e7906-d435-40e7-b21b-8feb2cd7cdf8
+
+
+
 
 <UL>
  <LI>등록된 계좌의 예금을 확인 할 수 있고 가입된 적금의 상태를 확인 할 수 있습니다.</LI>
