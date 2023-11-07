@@ -12,6 +12,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
     String uploadPath2;
     @Value("${itemuploadPath}")
     String uploadPath3;
+
+    @Value("${galleryuploadPath}")
+    String uploadPath4;
+
+
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         //WebMvcConfigurer.super.addResourceHandlers(registry);
@@ -24,6 +30,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addResourceLocations(uploadPath2);
         registry.addResourceHandler("/images3/**")
                 .addResourceLocations(uploadPath3);
+        registry.addResourceHandler("/images4/**")
+                .addResourceLocations(uploadPath4);
     }
 }
 

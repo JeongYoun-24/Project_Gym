@@ -43,6 +43,13 @@ public class Member {    // 회원 정보
         this.email = email;
 
     }
+    // 회원권 여부 변경 메서드
+    public void change2(String memberShipCheck){
+        this.memberShipCheck = memberShipCheck;
+    }
+
+
+
     // 비밀번호 변경 메서드
     public void pwdUpdate(String password, PasswordEncoder passwordEncoder){
         Member member = new Member();

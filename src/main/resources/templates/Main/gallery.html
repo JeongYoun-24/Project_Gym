@@ -1,27 +1,11 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Stamina &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>헬스장 갤러리 페이지(로드 콜D먼 헬스장)</title>
 
-	<!-- 
-	//////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -60,6 +44,78 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+		<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.imgList {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.imgC p {
+	text-align: center;
+}
+
+.modal {
+	display: none;
+	z-index: 500;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal button {
+	position: absolute;
+	top: 3rem;
+	right: 3rem;
+	background: transparent;
+	border: 0;
+	color: #ffffff;
+	font-size: 3rem;
+}
+
+.modalBox {
+	position: relative;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -20%);
+	background-color: #ffffff;
+	width: 40%;
+	height: 40%;
+	text-align: center;
+}
+
+.modalBox img {
+	width: 100%;
+}
+
+.modalBox p {
+	color: #ffffff;
+	background-color: #000;
+	font-size: 2rem;
+	padding: .2rem;
+}
+
+		</style>
+
+
+
+
 	</head>
 	<body>
 		
@@ -78,8 +134,8 @@
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
-							<h1>Gallery</h1>
-							<h2>Free html5 templates Made by <a href="http://freehtml5.co" target="_blank">freehtml5.co</a></h2>
+							<h1>헬스장사진</h1>
+							<h2>헬스장 다양한 운동기구 소개<a href="http://freehtml5.co" target="_blank"></a></h2>
 						</div>
 					</div>
 				</div>
@@ -87,101 +143,117 @@
 		</div>
 	</header>
 
-	
-	<div id="fh5co-gallery">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Gym gallery</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+
+		<div id="fh5co-gallery">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+						<h2>헬스장 갤러리</h2>
+						<p>최고의 장비와 최고의 트레이너들이 준비되어 있습니다. 운동할 마음만 가지고오세요 </p>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid">
+				<div class="row row-bottom-padded-md">
+					<div class="col-md-12">
+						<ul id="fh5co-portfolio-list">
+
+							<li class="one-third animate-box imgC" data-animate-effect="fadeIn" style="background-image: url(images5/img_4.png); ">
+								<img src="images5/img_4.png" class="imgC" style="width: 0px;height:0px ;">
+								<a >
+									<div class="case-studies-summary">
+										<span>로드 콜D먼 헬스장</span>
+										<h2>덤벨 룸</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-third animate-box imgC" data-animate-effect="fadeIn" style="background-image: url(images5/img_3.png); ">
+								<img src="images5/img_3.png" class="imgC" style="width: 0px;height:0px ;">
+								<a >
+									<div class="case-studies-summary">
+										<span>로드 콜D먼 헬스장</span>
+										<h2>런닝머신 룸</h2>
+									</div>
+								</a>
+							</li>
+
+							<li class="one-third animate-box imgC" data-animate-effect="fadeIn" style="background-image: url(images5/img_7.png); ">
+								<img src="images5/img_7.png" class="imgC" style="width: 0px;height:0px ;">
+								<a >
+									<div class="case-studies-summary">
+										<span>로드 콜D먼 헬스장</span>
+										<h2>바벨 형 기구머신 룸</h2>
+									</div>
+								</a>
+							</li>
+
+							<li class="one-third animate-box imgC" data-animate-effect="fadeIn" style="background-image: url(images5/img_9.png); ">
+								<img src="images5/img_9.png" class="imgC" style="width: 0px;height:0px ;">
+								<a >
+									<img src="images5/img_9.png" class="imgC" style="width: 0px;height:0px ;">
+									<div class="case-studies-summary">
+										<span>로드 콜D먼 헬스장</span>
+										<h2>기구머신 룸 </h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-third animate-box imgC" data-animate-effect="fadeIn" style="background-image: url(images5/img_10.png); ">
+								<img src="images5/img_10.png" class="imgC" style="width: 0px;height:0px ;">
+								<a >
+									<div class="case-studies-summary">
+										<span>로드 콜D먼 헬스장</span>
+										<h2>넓은 PT 룸 </h2>
+									</div>
+								</a>
+							</li>
+							<li class="two-third animate-box imgC" data-animate-effect="fadeIn" style="background-image: url(images5/img_11.png); ">
+								<img src="images5/img_11.png" class="imgC" style="width: 0px;height:0px ;">
+								<a>
+									<div class="case-studies-summary">
+										<span>로드 콜D먼 헬스장</span>
+										<h2>요가 및 스트레칭 룸</h2>
+									</div>
+								</a>
+							</li>
+							<li class="one-third animate-box imgC" data-animate-effect="fadeIn" style="background-image: url(images5/img_2.png); ">
+								<img src="images5/img_2.png" class="imgC"style="width: 0px;height:0px ;">
+								<a>
+									<div class="case-studies-summary">
+										<span>로드 콜D먼 헬스장</span>
+										<h2>종합 기구 룸 </h2>
+									</div>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid">
-			<div class="row row-bottom-padded-md">
-				<div class="col-md-12">
-					<ul id="fh5co-portfolio-list">
+		<div class="modal">
+			<button>&times;</button>
+			<div class="modalBox">
+				<img src="" alt="">
+				<p></p>
+			</div>
+		</div>
 
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); ">
-							<a href="#">
-								<div class="case-studies-summary">
-									<span>Illustration</span>
-									<h2>Useful baskets</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-							<a href="#">
-								<div class="case-studies-summary">
-									<span>Web Design</span>
-									<h2>Skater man in the road</h2>
-								</div>
-							</a>
-						</li>
 
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-							<a href="#">
-								<div class="case-studies-summary">
-									<span>Web Design</span>
-									<h2>Two Glas of Juice</h2>
-								</div>
-							</a>
-						</li>
 
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); "> 
-							<a href="#">
-								<div class="case-studies-summary">
-									<span>Web Design</span>
-									<h2>Timer starts now!</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-							<a href="#">
-								<div class="case-studies-summary">
-									<span>Web Design</span>
-									<h2>Two Glas of Juice</h2>
-								</div>
-							</a>
-						</li>
-						<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
-							<a href="#">
-								<div class="case-studies-summary">
-									<span>Illustration</span>
-									<h2>Beautiful sunset</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-							<a href="#">
-								<div class="case-studies-summary">
-									<span>Web Design</span>
-									<h2>Two Glas of Juice</h2>
-								</div>
-							</a>
-						</li>
-					</ul>		
+		<div id="fh5co-started" class="fh5co-bg" style="background-image: url(images/img_bg_3.jpg);">
+			<div class="overlay"></div>
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<h2>이번 여름 피트니스 수업 <br> <span> 지금 결제하고 <br> Get <span class="percent">35%</span> 할인받으세요</span></h2>
+					</div>
+				</div>
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center">
+						<p><a href="/member/login" class="btn btn-default btn-lg">회원가입</a></p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	
-
-	<div id="fh5co-started" class="fh5co-bg" style="background-image: url(images/img_bg_3.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<h2>Fitness Classes this Summer <br> <span> Pay Now and <br> Get <span class="percent">35%</span> Discount</span></h2>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<p><a href="#" class="btn btn-default btn-lg">Become a Member</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
 
 
 	<footer id="fh5co-footer" class="fh5co-bg" style="background-image: url(images/img_bg_1.jpg);" role="contentinfo">
@@ -273,5 +345,44 @@
 	<script src="js/main.js"></script>
 
 	</body>
+
+<script>
+$(function(){
+
+
+// 	이미지 클릭시 해당 이미지 모달
+	$(".imgC").click(function(){
+		$(".modal").show();
+		// 해당 이미지 가겨오기
+		var imgSrc = $(this).children("img").attr("src");
+		var imgAlt = $(this).children("img").attr("alt");
+		$(".modalBox img").attr("src", imgSrc);
+		$(".modalBox img").attr("alt", imgAlt);
+
+		// 해당 이미지 텍스트 가져오기
+		var imgTit =  $(this).children("p").text();
+		$(".modalBox p").text(imgTit);
+
+   // 해당 이미지에 alt값을 가져와 제목으로
+		//$(".modalBox p").text(imgAlt);
+	});
+
+	//.modal안에 button을 클릭하면 .modal닫기
+	$(".modal button").click(function(){
+		$(".modal").hide();
+	});
+
+	//.modal밖에 클릭시 닫힘
+	$(".modal").click(function (e) {
+    if (e.target.className != "modal") {
+      return false;
+    } else {
+      $(".modal").hide();
+    }
+  });
+});
+
+</script>
+
 </html>
 

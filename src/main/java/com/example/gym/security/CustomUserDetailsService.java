@@ -39,7 +39,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         //db로 회원 정보
         return User.builder()
-                .username(member.getName())
+
+                .username(member.getMemberId())
                 .password(member.getPassword())
                 .roles(member.getRole().toString())
 //                .authorities("ROLE"+member.getRole().toString())

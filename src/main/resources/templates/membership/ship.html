@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org"
+
+>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>회원권 구매 페이지(로드 콜D먼 헬스장)</title>
+
+  <!-- Facebook and Twitter integration -->
+  <meta property="og:title" content=""/>
+  <meta property="og:image" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:site_name" content=""/>
+  <meta property="og:description" content=""/>
+  <meta name="twitter:title" content="" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:url" content="" />
+  <meta name="twitter:card" content="" />
+
+  <!--		<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">-->
+
+  <!-- 애니메이션 css -->
+  <link rel="stylesheet" href="../css/animate.css">
+  <!-- 아이콘 css-->
+  <link rel="stylesheet" href="../css/icomoon.css">
+  <!-- 부트스트랩 css  -->
+  <link rel="stylesheet" href="../css/bootstrap.css">
+
+  <!-- 팝업 css -->
+  <link rel="stylesheet" href="../css/magnific-popup.css">
+
+  <!-- Owl Carousel css  -->
+  <link rel="stylesheet" href="../css/owl.carousel.min.css">
+  <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+
+  <!-- 테마 스타일 css  -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- 모더나이저 js파일 -->
+  <script src="../js/modernizr-2.6.2.min.js"></script>
+  <script src="../js/respond.min.js"></script>
+
+</head>
+<body>
+
+
+<div id="page">
+  <header>
+    <div th:replace="fragments/header::header"></div>
+
+  </header>
+	<div>
+		<div  class="container">
+		  <div class="text-center">
+			<h3>회원권 구매 페이지</h3>
+		  </div>
+			  <div class="row ">
+				<div class="col-md-8 col-md-offset-2 text-center">
+				  <h2>가격</h2>
+				  <p>1개월부터 3개월 6개월 12개월 최대 24개월까지 기간을정할수있습니다.</p>
+				</div>
+			</div>
+
+			<div class="d-flex justify-content-center">
+
+					<input type="hidden" name="no" id="shipNo" th:value="${membershipDTO.membershipNo}"  >
+
+					<select class="text-center" id="membershipNo" name="membershipNo" style="height:100xp; font-size: 20xp;">
+						<option value="1">1개월</option>
+						<option value="2">3개월</option>
+						<option value="3">6개월</option>
+						<option value="4">12개월</option>
+						<option value="5">24개월</option>
+
+					</select>
+
+					<input class="text-center" type="text" id="money" name="money" th:value="${#numbers.formatInteger(membershipDTO.price, 3, 'COMMA') + '원'}" style="height:100xp;"  >
+
+						<button class="btn" id="btn">결제버튼</button>
+
+
+
+			</div>
+
+
+
+
+	</div>
+</div>
+
+  <footer>
+
+    <div th:replace="fragments/footer::footer"></div>
+
+  </footer>
+
+
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"
+		integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+		crossorigin="anonymous"></script>
+<script >
+	$(function(){
+		$('#btn').click(function(){
+		var shipNo = $('#shipNo').val()
+			console.log(shipNo);
+
+			var url = "/ship";
+            var paramData = {
+                 shipNo : $('#shipNo').val()
+            };
+
+            var param = JSON.stringify(paramData);
+
+
+            $.ajax({
+                url      : url,
+                type     : "POST",
+                contentType : "application/json",
+                data     : param,
+                dataType : "json",
+                cache   : false,
+                success  : function(result, status){
+
+                		console.log(result);
+                		console.log(status);
+
+
+                    alert("장바구니에 저장 되었습니다.");
+<!--                    location.href='/main';-->
+                },
+                error : function(jqXHR, status, error){
+						console.log(jqXHR);
+                		console.log(status);
+                		console.log(error);
+
+						if(jqXHR.responseText == "결제완료"){
+						 alert("결제 완료되었습니다.");
+						 location.href='/main';
+						}
+						if(jqXHR.responseText == "결제실패"){
+						 alert("결제 실패");
+
+						}
+
+
+                    if(jqXHR.status == '401'){
+                        alert('로그인 후 이용해주세요');
+                     location.href='/member/login';
+<!--                    } else{-->
+<!--                        alert('로그인 후 이용해주세요');-->
+<!--                        location.href='/member/login';-->
+<!--                    }-->
+
+                }
+            });
+
+
+		})
+
+
+	$('#membershipNo').change(function(){
+		var membershipNo = $(this).val()
+
+		console.log("체인지"+membershipNo);
+	 	var url = "/poship";
+            var paramData = {
+                shipNo : $("#membershipNo").val(),
+
+            };
+
+            var param = JSON.stringify(paramData);
+
+
+            $.ajax({
+                url      : url,
+                type     : "POST",
+                contentType : "application/json",
+                data     : param,
+                dataType : "json",
+                cache   : false,
+                success  : function(data){
+                    console.log(data);
+
+                    var money = data.price;
+                    var ship = data.membershipNo;
+
+					$('input[name=money]').attr('value',money+"원");
+					$('input[name=no]').attr('value',ship);
+
+
+                },
+                error : function(jqXHR, status, error){
+
+
+                }
+            });
+
+
+
+	})
+
+})
+
+
+
+
+
+ function inputNumberFormat(obj) {
+     obj.value = comma(uncomma(obj.value));
+ }
+
+ function comma(str) {
+     str = String(str);
+     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
+ }
+
+ function uncomma(str) {
+     str = String(str);
+     return str.replace(/[^\d]+/g, '');
+ }
+
+</script>
+
+
+
+
+</html>

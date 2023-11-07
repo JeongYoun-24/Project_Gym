@@ -10,6 +10,10 @@ public interface MemberService {
     public void modify(MemberDTO memberDTO);
     public void remove(String memberId);
 
+    // 회원권 결제시 수정 되는 정보
+    public void shipModify(MemberDTO memberDTO);
+
+
 
     public MemberDTO login(String name , String email);
     public MemberDTO loginId(String email);

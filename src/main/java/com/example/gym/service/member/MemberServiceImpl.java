@@ -87,6 +87,16 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public void shipModify(MemberDTO memberDTO) {
+
+        Optional<Member> result =  memberRepository.findById(memberDTO.getMemberId());
+        Member board = result.orElseThrow();
+
+        board.change2(memberDTO.getMemberShipCheck());
+        memberRepository.save(board);
+    }
+
+    @Override
     public MemberDTO login(String name, String email) {
         Member users = memberRepository.findByNameOrEmail(name,email);
 
