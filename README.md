@@ -31,7 +31,7 @@
 
 <H3>메인 페이지</H3>
 <BR>
-<img src="file:///C:/Users/82107/Downloads/%EC%A0%9C%EB%AA%A9%20%EC%97%86%EB%8A%94%20%EB%94%94%EC%9E%90%EC%9D%B8.gif">
+<img src="![제목 없는 디자인 (1)](https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/7a7eb9b2-10f8-4173-a456-9f5083a01c96)">
 
 
 <UL>
