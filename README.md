@@ -1,5 +1,5 @@
-![제목 없는 디자인 (4)](https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/997fd83c-513d-4a21-a860-771189471f26)# PortfolioBank
-헬스장 웹페이지 
+# Project_GYM
+헬스장 웹 페이지 개인프로젝트 포토폴리오
 
 # 소개
  헬스장 과 트레이너 소개 및 회원군 구매 기능 구현 페이지 
