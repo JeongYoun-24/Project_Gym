@@ -37,15 +37,38 @@
 <UL>
  <LI>메인페이지 구현 영상입니다.</LI>
 </UL>
+<BR>
 
 <HR>
-<img width="800px" src="https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/4154fe28-0f79-4205-b250-8659ba4de846">
+<H3>회원권 페이지</H3>
+<BR>
+<img width="800px" src="https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/4154fe28-0f79-4205-b250-8659ba4de846"> 
 
+<UL>
+ <LI>회원권 구매 페이지 입니다.</LI>
+</UL>
+<BR>
+
+
+<H3>트레이너 페이지</H3>
+<BR>
 <img width="800px" src="https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/e8555690-f901-4898-9399-983a4148e835">
 
+<UL>
+ <LI>트레이너 소개 페이지입니다.</LI>
+</UL>
+<BR>
+
+<H3>헬스장 사진 페이지</H3>
+<BR>
 <img width="800px" src="https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/041c6ee9-3d53-4e6d-9a06-804505c682ad">
 
 
+<UL>
+ <LI>헬스장 기구 종류 및 소개 사진입니다.</LI>
+</UL>
+
+<HR>
 
 # 프로젝트를 통해 느낀 점과 소감
 
