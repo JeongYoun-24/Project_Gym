@@ -43,6 +43,8 @@
 
 <img width="800px" src="https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/e8555690-f901-4898-9399-983a4148e835">
 
+<img width="800px" src="https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/041c6ee9-3d53-4e6d-9a06-804505c682ad">
+
 
 
 # 프로젝트를 통해 느낀 점과 소감
