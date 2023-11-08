@@ -39,6 +39,9 @@
 </UL>
 
 <HR>
+![제목 없는 디자인 (3)](https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/9625390f-0598-4dd0-a9c6-d4abcfcf9d81)
+
+
 
 
 # 프로젝트를 통해 느낀 점과 소감
