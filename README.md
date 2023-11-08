@@ -1,4 +1,4 @@
-# PortfolioBank
+![제목 없는 디자인 (4)](https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/997fd83c-513d-4a21-a860-771189471f26)# PortfolioBank
 헬스장 웹페이지 
 
 # 소개
@@ -39,8 +39,9 @@
 </UL>
 
 <HR>
-![제목 없는 디자인 (3)](https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/9625390f-0598-4dd0-a9c6-d4abcfcf9d81)
+<img width="800px" src="https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/4154fe28-0f79-4205-b250-8659ba4de846">
 
+<img width="800px" src="https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/e8555690-f901-4898-9399-983a4148e835">
 
 
 
