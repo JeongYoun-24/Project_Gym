@@ -22,9 +22,7 @@
 ![js](https://img.shields.io/badge/bootstrap-7952B3?style=for-the-badge&logo=JavaScript&logoColor=white)
 ![js](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)
 
-# E-R 다이어그램
 
-![ERD](https://github.com/JeongYoun-24/Project_Gym.github.io/assets/126854252/6474e6bf-c32c-4a7b-8544-2b84dd7893a8)
 
 
 # 핵심 기능 및 페이지 소개
