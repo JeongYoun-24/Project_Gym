@@ -290,6 +290,85 @@
 
 <HR>
 
+<details>
+ <summary> 시큐리티 코드
+ 
+ </summary> 
+ 
+    private final DataSource dataSource;
+    private final CustomUserDetailsService customUserDetailsService;
+
+
+    // 로그인과정 생략 : 개발자 직접 설정
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
+        log.info("----- configure ------");
+
+        http.formLogin().loginPage("/member/login") //사용자가 설정한 로그인 페이지
+                .defaultSuccessUrl("/main")//로그인 성공시 이동 경로
+                .usernameParameter("email")//로그인시 사용될 유저 이름
+                .failureUrl("/member/login/error")
+                .and()//그리고
+                .logout() //로그아웃
+                .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout"))//로그아웃 경로
+                .logoutSuccessUrl("/main"); //로그아웃 성공시 이동 경로
+
+        http.csrf().disable();
+        http.formLogin().loginPage("/member/login");
+
+        //인증되지 않은 사용자가 리소스 요청할 경우 에러
+        http.exceptionHandling()
+                .authenticationEntryPoint(new CustomAuthenticationEntryPoint());
+
+        http.exceptionHandling().accessDeniedHandler(accessDeniedHandler());// 403 에러 처리
+
+        // 자동 로그인 처리
+        http.rememberMe().key("12345678")  // 키값 생성
+                .tokenRepository(persistentTokenRepository()) // 토근 생성
+                .userDetailsService(customUserDetailsService) // 서큐리티 로그인 정보
+                .tokenValiditySeconds(60*60*24*30); // 유효기간 30일
+
+
+
+        return http.build();
+    }
+
+    // 해시코드로 암호화 처리
+    @Bean
+    public PasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
+    // 정적자원(resources -> static)들은 스프링시큐리티 적용에서 제외
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer(){
+        log.info("--0--0-0-0-0-0-0-");
+
+        return (web) -> web.ignoring().requestMatchers(PathRequest.toStaticResources().atCommonLocations());
+
+    }
+
+    // 접근 권한 거부 예외발생 처리
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler(){
+
+        return  new Custom403Handler();
+    }
+
+    // 자동 로그인 (로그인정보 :UserDatoils외 db유저)
+    @Bean
+    public PersistentTokenRepository persistentTokenRepository(){
+        JdbcTokenRepositoryImpl repo =new JdbcTokenRepositoryImpl();
+        repo.setDataSource(dataSource);
+
+        return  repo;
+    }
+
+</details>
+
+
+
+
 # 프로젝트를 통해 느낀 점과 소감
 
 
